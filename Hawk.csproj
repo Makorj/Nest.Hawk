@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlackBird\BlackBird.csproj" />
-    <ProjectReference Include="..\JackdawInterface\JackdawInterface.csproj" />
+    <ProjectReference Include="..\Nest.BlackBird\BlackBird.csproj" />
+    <ProjectReference Include="..\Nest.Jackdaw.Interface\JackdawInterface.csproj" />
   </ItemGroup>
 
 </Project>
