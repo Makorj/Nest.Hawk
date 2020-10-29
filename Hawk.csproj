@@ -3,6 +3,19 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Florent Vain</Authors>
+    <Company>Studio BlackFlag</Company>
+    <Product>Nest.Hawk</Product>
+    <PackageId>Nest.Hawk</PackageId>
+    <AssemblyVersion>0.1.0.3</AssemblyVersion>
+    <FileVersion>0.1.0.3</FileVersion>
+    <Version>0.1.0-alpha3</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+    <StartupObject>Hawk.Program</StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
 
   <ItemGroup>

@@ -3,6 +3,7 @@ using Hawk.Database;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
@@ -182,15 +183,36 @@ namespace Hawk
 
         static void Main(string[] args)
         {
+
+            if(args.Length >= 2)
+            {
+                try
+                {
+                    server = new Server(new ServerInfo
+                    {
+                        ipAddress = IPAddress.Parse(args[0]),
+                        port = Int32.Parse(args[1]),
+                    }, false);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Wrong arguments. Use should be :\n\n\t hawk [IP address] [Port Number]");
+                    Environment.Exit(0);
+                }
+            }
+            else
+            {
+                server = new Server(new ServerInfo
+                {
+                    ipAddress = IPAddress.Parse("192.168.0.21"),
+                    port = 8001,
+                }, false);
+            }
+
             Console.Title = "Hawk";
             Console.WriteLine(LOGO);
             Console.WriteLine(VERSION);
 
-            server = new Server(new ServerInfo
-            {
-                ipAddress = IPAddress.Parse("192.168.0.21"),
-                port = 8001,
-            }, false);
             databaseManager = DatabaseManager.GetDatabaseManager();
             sockets = new List<Socket>();
             queleaWorkers = new List<Socket>();
